@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Card</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        }
+
+        .card {
+            background: #fff;
+            width: 320px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+            perspective: 1000px;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            text-align: center;
+            transform-style: preserve-3d;
+        }
+
+        /* Add 3D rotation effect on hover */
+        .card:hover {
+            transform: rotateY(10deg) rotateX(5deg);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Styling the picture section */
+        .picture img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .picture img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Main content (name, title) */
+        .name {
+            font-size: 24px;
+            margin: 15px 0 5px;
+            color: #212121;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #757575;
+        }
+
+        /* Social links */
+        .social {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .social li {
+            margin: 0 10px;
+        }
+
+        .social a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #424242;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social a:hover {
+            color: #1976d2;
+            transform: translateY(-5px);
+        }
+
+        /* Skills section */
+        .skills {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .skills h6 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #212121;
+            text-transform: uppercase;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills ul li {
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #424242;
+        }
+
+        /* Adding some 3D depth to the card */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.05), transparent);
+            z-index: -1;
+            border-radius: 15px;
+            transform: translateZ(-10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <!-- 1 -->
+        <div class="picture">
+            <img class="img-fluid" src="profile.png" alt="Profile Image">
+        </div>
+        <!-- 2 -->
+        <div class="main-content">
+            <h3 class="name">JAY THAKAR</h3>
+            <span><i class="fab fa-instagram"></i> jay_thakar_2004__</span>
+            <h4 class="title">Android Developer 👨‍💻</h4>
+        </div>
+        <!-- 3 -->
+        <ul class="social">
+            <li><a href="#" class="fa fa-github"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-telegram"></a></li>
+        </ul>
+        <!-- 4 -->
+        <div class="skills">
+            <h6>Skills</h6>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JAVA</li>
+                <li>JAVASCRIPT</li>
+                <li>PYTHON</li>
+                <li>C</li>
+                <li>GIT</li>
+                <li>C++</li>
+                <li>XML</li>
+                <li>SQL</li>
+            </ul>
+        </div>
+
+        <div class="skills">
+            <h6>Libraries</h6>
+            <ul>
+                <li>PANDAS</li>
+                <li>NUMPY</li>
+                <li>LOTTIE</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/dd8c49730d.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
